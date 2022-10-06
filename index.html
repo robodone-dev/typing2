@@ -1,0 +1,293 @@
+<html>
+  <head>
+    <title>ロボ団タイピング</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+    <link href="https://robodone-dev.github.io/typing2/style.css" rel="stylesheet">  
+    <meta http-equiv="content-type" charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://robodone-dev.github.io/typing2/min.js"></script>
+  </head>
+  <body>
+    <div id="video-area">
+      <video id="video" poster="" webkit-playsinline playsinline muted autoplay loop>
+        <source src="https://robodone-dev.github.io/typing/js_typing_game-master/video/Blue_9809.mp4" type="video/mp4">
+      </div>    
+    <!-- バナー（リンクなし） -->
+    <div class="news-banner">
+        <div class="news-banner__content">
+        <p>※スクリーンサイズの都合上、解像度(横)748px以上のデバイスでのプレイを推奨します。</p>
+      </div>
+    </div>
+    <div class="mode-select">
+  <!-- Typing game -->
+  <div id="typing-start" class="typing-start">
+    <img src="https://placehold.jp/250x150.png">
+    <p><span class="star5_rating" data-rate="1"></span></p>
+    <button id="open-button" class="open-button" value=1 type="button">トレーニングする</button>
+    <noscript>
+      <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
+    </noscript>
+  </div>
+
+  <div id="typing-start" class="typing-start">
+    <img src="https://placehold.jp/250x150.png">
+    <p><span class="star5_rating" data-rate="3"></span></p>
+    <button id="open-button2" class="open-button" value=2 type="button">トレーニングする</button>
+    <noscript>
+      <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
+    </noscript>
+  </div>
+  
+  <div id="typing-start" class="typing-start">
+    <img src="https://placehold.jp/250x150.png">
+    <p><span class="star5_rating" data-rate="5"></span></p>
+    <button id="open-button3" class="open-button" value=3 type="button">トレーニングする</button>
+    <noscript>
+      <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
+    </noscript>
+  </div>
+
+</div>
+    <div id="game-screen">
+    <div class="clouds">
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud big front slowest">
+    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant smaller">
+    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+    </svg>
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud small slow">
+    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+    </svg>
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud distant super-slow massive">
+    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+    </svg>
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="762px"
+    height="331px" viewBox="0 0 762 331" enable-background="new 0 0 762 331" xml:space="preserve" class="cloud slower">
+    <path fill="#FFFFFF" d="M715.394,228h-16.595c0.79-5.219,1.201-10.562,1.201-16c0-58.542-47.458-106-106-106
+    c-8.198,0-16.178,0.932-23.841,2.693C548.279,45.434,488.199,0,417.5,0c-84.827,0-154.374,65.401-160.98,148.529
+    C245.15,143.684,232.639,141,219.5,141c-49.667,0-90.381,38.315-94.204,87H46.607C20.866,228,0,251.058,0,279.5
+    S20.866,331,46.607,331h668.787C741.133,331,762,307.942,762,279.5S741.133,228,715.394,228z"/>
+    </svg>
+
+    </div>
+    <div class="frame">
+    <div class="plane-container" id="icon">
+
+
+
+    </div>
+    </div>
+  
+  <div id="game-header">
+    <div class="description"><div class="header-menu"><img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/star-yellow.svg" id="icon-header" ><span>×</span><div class="number">0</div></div></div>
+    <button id="close-button1" type="button">閉じる</button>
+  </div>
+<!--   <div id="game-banner">
+    <a href="https://itblogger-note.blogspot.com" rel="noopener" target="_blank">
+      <img alt="バナー画像" width="728" height="90" src="https://1.bp.blogspot.com/-1Dw6SiDdksc/YvprQyMH0rI/AAAAAAAAEFQ/wefgQCft9DoLe6o5cCjJ6H1lW7k68dphACNcBGAsYHQ/s0-e365/banner.png"/>
+    </a>
+  </div> -->
+  <div class="animate-panel">
+    <div id="js-glitter">
+    <img id="animate" src="https://robodone-dev.github.io/typing/js_typing_game-master/img/human.gif">
+    </div>
+<!--     <div class="measure">
+      <div>1</div><div></div>
+      <div></div><div></div>
+      <div></div><div></div>
+      <div></div><div></div>
+      <div></div><div></div>
+    </div> -->
+  </div>
+  <div id="game-body">
+    <div id="game-view1">
+      <div id="game-title"></div>
+      <div id="game-explain"></div>
+      <button id="start-button" type="button">スタート</button>
+      <div id="game-func">
+        <span>ローマ字表示(R)</span>
+        <div class="switch-btn">
+          <button class="on-btn btn show" type="button">ON</button>
+          <button class="off-btn btn" type="button">OFF</button>
+        </div>
+        <span>かな表示(K)</span>
+        <div class="switch-btn">
+          <button class="on-btn btn show" type="button">ON</button>
+          <button class="off-btn btn" type="button">OFF</button>
+        </div>
+        <span>キーガイド(G)</span>
+        <div class="switch-btn">
+          <button class="on-btn btn show" type="button">ON</button>
+          <button class="off-btn btn" type="button">OFF</button>
+        </div>
+        <span>WPM表示(W)</span>
+        <div class="switch-btn">
+          <button class="on-btn btn show" type="button">ON</button>
+          <button class="off-btn btn" type="button">OFF</button>
+        </div>
+        <span>スピードバー(S)</span>
+        <div class="switch-btn">
+          <button class="on-btn btn show" type="button">ON</button>
+          <button class="off-btn btn" type="button">OFF</button>
+        </div>
+      </div>
+    </div>
+    <div id="game-view2">
+      <div id="text-container">
+        <div id="miss-type-screen"></div>
+        <div id="start-msg">
+          <p>日本語入力モードをオフにしてください</p>
+          <p><em>スペースキーで開始</em></p>
+          <p>（終了はEscキーです）</p>
+        </div>
+        <div id="example"></div>
+        <div id="kana"></div>
+        <div id="sentence"></div>
+        <div id="progress-bar"></div>
+        <div id="current-wpm"></div>
+        <div id="speed-bar">
+          <div class="cover"></div>
+        </div>
+      </div>
+      <div id="virtual-keyboard">
+        <div class="deco_key1"></div>
+        <div class="key_1">1</div>
+        <div class="key_2">2</div>
+        <div class="key_3">3</div>
+        <div class="key_4">4</div>
+        <div class="key_5">5</div>
+        <div class="key_6">6</div>
+        <div class="key_7">7</div>
+        <div class="key_8">8</div>
+        <div class="key_9">9</div>
+        <div class="key_0">0</div>
+        <div class="key_hyphen">-</div>
+        <div class="deco_key2"></div>
+        <div class="deco_key3"></div>
+        <div class="deco_key4"></div>
+        <div class="deco_key5"></div>
+        <div class="key_q">Q</div>
+        <div class="key_w">W</div>
+        <div class="key_e">E</div>
+        <div class="key_r">R</div>
+        <div class="key_t">T</div>
+        <div class="key_y">Y</div>
+        <div class="key_u">U</div>
+        <div class="key_i">I</div>
+        <div class="key_o">O</div>
+        <div class="key_p">P</div>
+        <div class="key_atmark">@</div>
+        <div class="deco_key6"></div>
+        <div class="key_Enter"></div>
+        <div class="deco_key7"></div>
+        <div class="key_a">A</div>
+        <div class="key_s">S</div>
+        <div class="key_d">D</div>
+        <div class="key_f">F</div>
+        <div class="key_g">G</div>
+        <div class="key_h">H</div>
+        <div class="key_j">J</div>
+        <div class="key_k">K</div>
+        <div class="key_l">L</div>
+        <div class="key_semicolon">;</div>
+        <div class="key_colon">:</div>
+        <div class="deco_key8"></div>
+        <div class="key_lShift">shift</div>
+        <div class="key_z">Z</div>
+        <div class="key_x">X</div>
+        <div class="key_c">C</div>
+        <div class="key_v">V</div>
+        <div class="key_b">B</div>
+        <div class="key_n">N</div>
+        <div class="key_m">M</div>
+        <div class="key_comma">,</div>
+        <div class="key_period">.</div>
+        <div class="key_slash">/</div>
+        <div class="deco_key9"></div>
+        <div class="key_rShift">shift</div>
+        <div class="deco_key10"></div>
+        <div class="deco_key11"></div>
+        <div class="deco_key12"></div>
+        <div class="deco_key13"></div>
+        <div class="key_space">space</div>
+        <div class="deco_key14"></div>
+        <div class="deco_key15"></div>
+        <div class="deco_key16"></div>
+        <div class="deco_key17"></div>
+        <div class="deco_key18"></div>
+      </div>
+      <div id="hands">
+        <div id="little-left" class="finger little left"></div>
+        <div id="ring-left" class="finger ring left"></div>
+        <div id="middle-left" class="finger middle left"></div>
+        <div id="index-left" class="finger index left"></div>
+        <div id="thumb-left" class="finger thumb left"></div>
+        <div id="thumb-right" class="finger thumb right"></div>
+        <div id="index-right" class="finger index right"></div>
+        <div id="middle-right" class="finger middle right"></div>
+        <div id="ring-right" class="finger ring right"></div>
+        <div id="little-right" class="finger little right"></div>    
+      </div>
+    </div>
+    <div id="game-result">
+      <div id="current-result">
+        <div class="result-title">今回のタイピング結果</div>
+        <div id="example-list"></div>
+        <div class="result-data"></div>
+      </div>
+      <div id="prev-result">
+        <div class="result-title">前回の結果</div>
+        <div class="result-data"></div>
+      </div>
+      <div id="result-comment">
+        <div class="container">---</div>
+      </div>
+      <div id="btn-area">
+        <button id="replay-button" class="btn" type="button">もう1回</button>
+        <button id="close-button2" class="btn" type="button">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://github.com/pentamania/ios-unlock-test/blob/b7732977c491872c775a169563b6f9165eddf301/shared/wa.js">
+    </script>
+    <audio id="btn_wrong">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master//audio/Quiz-Wrong_Buzzer02-1.mp3" type="audio/mp3">
+    </audio>
+    <audio id="btn_push">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master//audio/btn_push.mp3" type="audio/mp3">
+    </audio>    
+    <audio id="countdown03">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master/audio/Countdown06-2.mp3" type="audio/mp3">
+    </audio>
+    <audio id="next_word">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master/audio/clear.mp3" type="audio/mp3">
+    </audio>
+    <audio id="end">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master/audio/end.wav" type="audio/wav">
+    </audio>
+</body>
+</html>
