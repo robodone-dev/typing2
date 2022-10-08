@@ -136,14 +136,18 @@
     overlay.style.width = window.innerWidth + 'px';
     overlay.style.height = window.innerHeight + 'px';
     console.log('open');
-    console.log(overlay.style.width);
-    console.log(overlay.style.height);
+    console.log('width:' +overlay.style.width);
+    console.log('height:' +overlay.style.height);
     game.style.display = 'block';
     // game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.top = window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
-    console.log(game.style.top);
-    console.log(game.style.left);
+    console.log('top:' +game.style.top);
+    console.log('innerHeight:' +window.innerHeight);
+    console.log('clientHeight:' +game.clientHeight);
+    console.log('left:' + game.style.left);
+    console.log('innerWidth:' +window.innerWidth);
+    console.log('clientWidth:' +game.clientWidth);
     if (isFirst) {
       document.body.appendChild(overlay);
       document.body.appendChild(game);
