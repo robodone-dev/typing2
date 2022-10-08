@@ -135,19 +135,17 @@
     // overlay.style.height = document.body.clientWidth + 'px';
     overlay.style.width = window.innerWidth + 'px';
     overlay.style.height = window.innerHeight + 'px';
-    console.log('open');
-    console.log('width:' +overlay.style.width);
-    console.log('height:' +overlay.style.height);
+    // console.log('open');
     game.style.display = 'block';
     // game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.top = window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
-    console.log('top:' +game.style.top);
-    console.log('innerHeight:' +window.innerHeight);
-    console.log('clientHeight:' +game.clientHeight);
-    console.log('left:' + game.style.left);
-    console.log('innerWidth:' +window.innerWidth);
-    console.log('clientWidth:' +game.clientWidth);
+    // console.log('top:' +game.style.top);
+    console.log('innerHeight:' +window.innerHeight + '|' +'clientHeight:' +game.clientHeight);
+    // console.log('clientHeight:' +game.clientHeight);
+    // console.log('left:' + game.style.left);
+    // console.log('innerWidth:' +window.innerWidth);
+    // console.log('clientWidth:' +game.clientWidth);
     if (isFirst) {
       document.body.appendChild(overlay);
       document.body.appendChild(game);
@@ -463,6 +461,7 @@
         container.innerHTML = '---'
       }
     }
+    console.log('finish'+'|'+'innerHeight:' +window.innerHeight + '|' +'clientHeight:' +game.clientHeight);
     isStopped = !1;
     const moBtn = document.getElementById('miss-only-button');
     if (recordM.length > 0) {
@@ -1077,7 +1076,9 @@
     progress.style.transform = 'none';
     overlay.style.display = 'none';
     game.style.display = 'none'
+    console.log('colse'+'|'+'innerHeight:' +window.innerHeight + '|' +'clientHeight:' +game.clientHeight);
   }
+  
   button1.addEventListener('click', close);
   button2.addEventListener('click', open);
   button22.addEventListener('click', open);
