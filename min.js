@@ -131,13 +131,14 @@
     } else {}
     isOpen = !0;
     overlay.style.display = 'block';
-    overlay.style.width = document.body.clientWidth + 'px';
-    overlay.style.height = document.body.clientWidth + 'px';
+    // overlay.style.width = document.body.clientWidth + 'px';
+    // overlay.style.height = document.body.clientWidth + 'px';
+    overlay.style.width = window.innerWidth + 'px';
+    overlay.style.height = window.innerHeight + 'px';
     console.log(overlay.style.width);
     console.log(overlay.style.height);
     game.style.display = 'block';
-    // game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
-    game.style.top = window.innerHeight / 2 - game.clientHeight / 2 + 'px';
+    game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
     console.log(game.style.top);
     console.log(game.style.left);
