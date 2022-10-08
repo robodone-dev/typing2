@@ -133,10 +133,13 @@
     overlay.style.display = 'block';
     overlay.style.width = document.body.clientWidth + 'px';
     overlay.style.height = document.body.clientWidth + 'px';
+    console.log(overlay.style.width);
     console.log(overlay.style.height);
     game.style.display = 'block';
     game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
+    console.log(overlay.style.top);
+    console.log(overlay.style.left);
     if (isFirst) {
       document.body.appendChild(overlay);
       document.body.appendChild(game);
@@ -820,7 +823,7 @@
   }
 
   function keyPosition(selector) {
-    console.log(selector);
+    // console.log(selector);
     if (littleLeftLine.includes(selector)) {
       keyPositionRemove();
       littleLeft.classList.add('on')
@@ -1234,16 +1237,15 @@ function endAudio() {
   document.getElementById('end').currentTime = 0;
   document.getElementById('end').play()
 }
-const glitterEls = document.getElementById("js-glitter");
 
 function loop_star() {
-  for (let step = 0; step < 8; step++) {
+  for (let step = 0; step < 7; step++) {
     setTimeout(createStar, 100 * step)
   }
 }
 
+const el = document.getElementById("js-glitter");
 function createStar() {
-  const el = document.getElementById("js-glitter");
   const starEl = document.createElement("span");
   starEl.className = "star";
   starEl.style.left = Math.random() * el.clientWidth + "px";
