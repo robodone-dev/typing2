@@ -135,6 +135,7 @@
     // overlay.style.height = document.body.clientWidth + 'px';
     overlay.style.width = window.innerWidth + 'px';
     overlay.style.height = window.innerHeight + 'px';
+    console.log('open');
     console.log(overlay.style.width);
     console.log(overlay.style.height);
     game.style.display = 'block';
@@ -1207,8 +1208,11 @@
   });
   window.addEventListener('resize', () => {
     if (isOpen) {
-      overlay.style.width = document.body.clientWidth + 'px';
-      overlay.style.height = document.body.clientHeight + 'px';
+      // overlay.style.width = document.body.clientWidth + 'px';
+      // overlay.style.height = document.body.clientHeight + 'px';
+      console.log('resize');
+      overlay.style.width = window.innerHeight + 'px';
+      overlay.style.height = window.innerWidth + 'px';
       game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
       game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px'
     }
