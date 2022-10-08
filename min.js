@@ -138,8 +138,8 @@
     game.style.display = 'block';
     game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
-    console.log(overlay.style.top);
-    console.log(overlay.style.left);
+    console.log(game.style.top);
+    console.log(game.style.left);
     if (isFirst) {
       document.body.appendChild(overlay);
       document.body.appendChild(game);
