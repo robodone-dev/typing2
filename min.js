@@ -90,6 +90,7 @@
       wordJP2 = ['apple', 'banana', 'orange', 'apple', 'banana', 'orange']
     } else {}
   } 
+  
   function backgroundSet(modeNum) {
     const screenback = document.getElementById('game-screen');
     if (modeNum == 1) {
@@ -131,17 +132,17 @@
     } else {}
     isOpen = !0;
     overlay.style.display = 'block';
-    // overlay.style.width = document.body.clientWidth + 'px';
-    // overlay.style.height = document.body.clientWidth + 'px';
-    overlay.style.width = window.innerWidth + 'px';
-    overlay.style.height = window.innerHeight + 'px';
+    overlay.style.width = document.body.clientWidth + 'px';
+    overlay.style.height = document.body.clientWidth + 'px';
+    // overlay.style.width = window.innerWidth + 'px';
+    // overlay.style.height = window.innerHeight + 'px';
     // console.log('open');
     game.style.display = 'block';
-    // game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
-    game.style.top = window.innerHeight / 2 - game.clientHeight / 2 + 'px';
+    game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
+    // game.style.top = window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
     // console.log('top:' +game.style.top);
-    console.log('innerHeight:' +window.innerHeight + '|' +'clientHeight:' +game.clientHeight);
+    console.log('open'+'|'+'innerHeight:' +window.innerHeight + '|' +'clientHeight:' +game.clientHeight);
     // console.log('clientHeight:' +game.clientHeight);
     // console.log('left:' + game.style.left);
     // console.log('innerWidth:' +window.innerWidth);
@@ -321,7 +322,7 @@
       selActive();
       if (count > 1) {
         nextwordAudio();
-        loop_star();
+        // loop_star();
         shuffleNumberCounter(targetWRM)
       }
     }
@@ -1214,11 +1215,11 @@
   });
   window.addEventListener('resize', () => {
     if (isOpen) {
-      // overlay.style.width = document.body.clientWidth + 'px';
-      // overlay.style.height = document.body.clientHeight + 'px';
+      overlay.style.width = document.body.clientWidth + 'px';
+      overlay.style.height = document.body.clientHeight + 'px';
       console.log('resize');
-      overlay.style.width = window.innerHeight + 'px';
-      overlay.style.height = window.innerWidth + 'px';
+      // overlay.style.width = window.innerHeight + 'px';
+      // overlay.style.height = window.innerWidth + 'px';
       game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
       game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px'
     }
