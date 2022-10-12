@@ -179,7 +179,7 @@ Have fun :)
     // game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
     // game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
     
-    game.style.top = window.pageYOffset + window.innerHeight / 7 + 'px';
+    game.style.top = window.pageYOffset + window.innerHeight / 8 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
     // console.log('pageYOffset:' + window.pageYOffset);
     // console.log('innerHeight:' + window.innerHeight);
