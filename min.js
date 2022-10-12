@@ -73,7 +73,7 @@ Have fun :)
   let missFlag = false;
   let isStopped = false;
   let moPlay = false;
-  let maxNum = 10; // 出題数の上限
+  let maxNum = 15; // 出題数の上限
   let random = true; // ランダム出題
   let resCmt = true; // 結果画面のコメント
   let flagR = true; // ローマ字表示
@@ -100,9 +100,9 @@ Have fun :)
       wordJP2 = ['apple', 'banana', 'orange','apple', 'banana', 'orange']; 
     }else if(modeNum == 3){
       // 表示文章
-      wordJP1 = ['りんご', 'ばなな', 'おれんじ','りんご', 'ばなな', 'おれんじ']; 
+      wordJP1 = ['1つの','できる，有能な','午後','再び','年齢，時代','前','すべての','すでに','もまた','いつも','アメリカ合衆国','1つの','～と、そして','怒った','動物','りんご','４月','到着する','～に','８月','おば','オーストラリア','秋','悪い','カバン','ボール','銀行，土手','土手']; 
       // ひらがな文章
-      wordJP2 = ['apple', 'banana', 'orange','apple', 'banana', 'orange']; 
+      wordJP2 = ['a','able','afternoon','again','age','ago','all','already','also','always','america','an','and','angry','animal','apple','april','arrive','at','august','aunt','australia','autumn','bad','bag','ball','bank','bank (embankment)']; 
       
     }else{
       
@@ -127,7 +127,7 @@ Have fun :)
     
   }
   
-    // アイコン
+  // アイコン
   function icon(modeNum){
     const planeIcon = document.getElementById('icon');
 
@@ -161,7 +161,7 @@ Have fun :)
       icon(2);
     }else if(e.target.value == 3){
       gameTitle.innerText ='ロボ団で使う英単語（Python）';
-      wordset(2);
+      wordset(3);
       backgroundSet(3);
       icon(3);
     }else{
@@ -184,7 +184,7 @@ Have fun :)
     // console.log('pageYOffset:' + window.pageYOffset);
     // console.log('innerHeight:' + window.innerHeight);
     // console.log('clientHeight:' + game.clientHeight);
-    console.log(game.style.top);
+    // console.log(game.style.top);
     
     if (isFirst) {
       document.body.appendChild(overlay);
@@ -379,7 +379,7 @@ Have fun :)
       
       if(count > 1){
         nextwordAudio();
-        // loop_star();
+        loop_star();
         shuffleNumberCounter(targetWRM);
       }
       
@@ -773,7 +773,7 @@ Have fun :)
   
   // ポジションガイド
   function keyPosition(selector){
-    console.log(selector);    
+    // console.log(selector);    
     if (littleLeftLine.includes(selector)){
       keyPositionRemove();
       littleLeft.classList.add('on');
@@ -1218,7 +1218,7 @@ const glitterEls = document.getElementById("js-glitter");
 // glitterEls.addEventListener("mouseenter",loop_star);
 
 function loop_star(){
-  for (let step = 0; step < 8; step++) {
+  for (let step = 0; step < 6; step++) {
     setTimeout(createStar,100*step);
   }
   
@@ -1247,31 +1247,34 @@ function createStar() {
 const target = document.querySelector('.number');
 const targetWRM = document.getElementById('current-wpm');
 const shuffleNumberCounter = (targetWRM) => {
-  var targetNum = Number(targetWRM.textContent.replace("WPM: ", ""))
-  
+  var targetNum = Number(targetWRM.textContent.replace("WPM: ", "")) /10;
+  var initNum = Number(target.innerHTML);
+  console.log('target_pre:'+targetNum);
   targetNum = Math.round(targetNum + Number(target.innerHTML));
-  // console.log(targetNum);
+  // targetNum = Math.round(targetNum /10);
+  console.log('target:'+targetNum);
+  console.log('init:'+initNum);
   
   if (!targetNum) {
     return
   }
 
-  let counterData = null
-  const speed = 2000 / targetNum;
-  let initNum = Number(target.innerHTML);
-
+  var counterData = null
+  const speed = 3000 / targetNum;
+  
   const countUp = () => {
     if (Number.isInteger(targetNum)) {
-      target.innerHTML = initNum
+      target.innerHTML = initNum;
     } else {
       target.innerHTML = `${initNum}.${Math.floor(Math.random() * 9)}`
     }
 
     initNum++
+    // targetNum = initNum + targetNum;
 
     if (initNum > targetNum) {
-      target.innerHTML = targetNum
-      clearInterval(counterData)
+      target.innerHTML = targetNum;
+      clearInterval(counterData);
     }
   }
   
