@@ -174,13 +174,17 @@ Have fun :)
     // overlay.style.height = document.body.clientHeight + 'px';
     overlay.style.width = document.body.scrollWidth + 'px';
     overlay.style.height = document.body.scrollHeight + 'px';
-    console.log('scrollHeight:' + document.body.clientHeight);
+    // console.log('scrollHeight:' + document.body.clientHeight);
     game.style.display = 'block';
-    game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
+    // game.style.top = window.pageYOffset + window.innerHeight / 2 - game.clientHeight / 2 + 'px';
+    // game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
+    
+    game.style.top = window.pageYOffset + window.innerHeight / 7 + 'px';
     game.style.left = window.innerWidth / 2 - game.clientWidth / 2 + 'px';
-    console.log('pageYOffset:' + window.pageYOffset);
-    console.log('innerHeight:' + window.innerHeight);
-    console.log('clientHeight:' + game.clientHeight);
+    // console.log('pageYOffset:' + window.pageYOffset);
+    // console.log('innerHeight:' + window.innerHeight);
+    // console.log('clientHeight:' + game.clientHeight);
+    console.log(game.style.top);
     
     if (isFirst) {
       document.body.appendChild(overlay);
