@@ -4,15 +4,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
-    <link href="https://robodone-dev.github.io/typing2/style.css" rel="stylesheet">  
+    <link href="https://robodone-dev.github.io/typing2/style.cs" rel="stylesheet">  
     <meta http-equiv="content-type" charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-<!--     <div id="video-area">
+    <div id="video-area">
       <video id="video" poster="" webkit-playsinline playsinline muted autoplay loop>
         <source src="https://robodone-dev.github.io/typing/js_typing_game-master/video/Blue_9809.mp4" type="video/mp4">
-      </div>     -->
+      </div>    
     <!-- バナー（リンクなし） -->
     <div class="news-banner">
         <div class="news-banner__content">
@@ -20,35 +20,64 @@
       </div>
     </div>
     <div class="mode-select">
-  <!-- Typing game -->
-  <div id="typing-start" class="typing-start">
-    <img src="https://placehold.jp/250x150.png">
-    <p><span class="star5_rating" data-rate="1"></span></p>
-    <button id="open-button" class="open-button" value=1 type="button">トレーニングする</button>
-    <noscript>
-      <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
-    </noscript>
-  </div>
+      <!-- Typing game -->
+      <div id="typing-start" class="typing-start">
+        <img src="https://placehold.jp/150x100.png">
+        <p><span class="star5_rating" data-rate="1"></span></p>
+        <button id="open-button" class="open-button" value=1 type="button">チャレンジする</button>
+        <noscript>
+          <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
+        </noscript>
+      </div>
 
-  <div id="typing-start" class="typing-start">
-    <img src="https://placehold.jp/250x150.png">
-    <p><span class="star5_rating" data-rate="3"></span></p>
-    <button id="open-button2" class="open-button" value=2 type="button">トレーニングする</button>
-    <noscript>
-      <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
-    </noscript>
-  </div>
-  
-  <div id="typing-start" class="typing-start">
-    <img src="https://placehold.jp/250x150.png">
-    <p><span class="star5_rating" data-rate="5"></span></p>
-    <button id="open-button3" class="open-button" value=3 type="button">トレーニングする</button>
-    <noscript>
-      <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
-    </noscript>
-  </div>
+      <div id="typing-start" class="typing-start">
+        <img src="https://placehold.jp/150x100.png">
+        <p><span class="star5_rating" data-rate="3"></span></p>
+        <button id="open-button2" class="open-button" value=2 type="button">チャレンジする</button>
+        <noscript>
+          <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
+        </noscript>
+      </div>
 
-</div>
+      <div id="typing-start" class="typing-start">
+        <img src="https://placehold.jp/150x100.png">
+        <p><span class="star5_rating" data-rate="5"></span></p>
+        <button id="open-button3" class="open-button" value=3 type="button">チャレンジする</button>
+        <noscript>
+          <p class="msg">本ゲームをプレイするにはJavaScriptを有効化してください。</p>
+        </noscript>
+      </div>
+    </div>
+    <div class="score-section">
+      <table class="score-table">
+  <tr>
+  <th style="width:90px;">レベル</th>
+  <th>どれくらいのレベル？</th>
+  </tr>
+  <tr>
+    <td>S（±）</td>
+    <td rowspan="2" style="background-color:#3AB0FF;color:#fff;" align="left">一般的なオフィスワークでは困ることのないレベルです。<br>プロレベルにはまだ届きません。<br>より高いレベルを目指すには、正確さを高めましょう</td>
+  </tr>
+  <tr>
+    <td>A（±）</td>
+  </tr>
+   <tr>
+    <td >B（±）</td>
+    <td rowspan="2" style="background-color:#FFB562;color:#fff;" align="left">個人的な用途でのパソコン利用には問題のないレベルです。
+<br>正確さを意識して更にスコアアップを目指しましょう。</td>
+  </tr>
+  <tr>
+    <td>C（±）</td>
+  </tr>
+  <tr>
+    <td>D（±）</td>
+    <td rowspan="2" style="background-color:#F87474;color:#fff;" align="left">キーの配置とタイピングの基本操作が理解できてきました。<br>できるだけ毎日練習を続けましょう。</td>
+  </tr>
+  <tr>
+    <td>E（±）</td>
+  </tr>
+</table>
+    </div>
     <div id="game-screen">
     <div class="clouds">
 
@@ -92,13 +121,7 @@
     </svg>
 
     </div>
-    <div class="frame">
-    <div class="plane-container" id="icon">
 
-
-
-    </div>
-    </div>
   
   <div id="game-header">
     <div class="description"><div class="header-menu"><img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/star-yellow.svg" id="icon-header" ><span>×</span><div class="number">0</div></div></div>
@@ -110,8 +133,13 @@
     </a>
   </div> -->
   <div class="animate-panel">
+    
     <div id="js-glitter">
-    <img id="animate" src="https://robodone-dev.github.io/typing/js_typing_game-master/img/human.gif">
+    <div class="frame">
+      <div class="plane-container" id="icon">
+    </div>
+    </div>
+    <img id="animate" src="https://robodone-dev.github.io/typing/js_typing_game-master/img/nezurobo.gif">
     </div>
 <!--     <div class="measure">
       <div>1</div><div></div>
@@ -123,9 +151,14 @@
   </div>
   <div id="game-body">
     <div id="game-view1">
-      <div id="game-title"></div>
-      <div id="game-explain"></div>
-      <button id="start-button" type="button">スタート</button>
+      <div id="game-title">より多くのスターをゲットしよう！！</div>
+      <div id="game-subtitle"></div>
+      <div id="game-explain">プログラミングが得意で、子供たちに課題解決のための
+アドバイスをくれたり、<br>おっちょこちょいのロボにゃんの
+サポートをしたりします。<br>プログラミングが得意で、子供たちに課題解決のための
+アドバイスをくれたり、<br>おっちょこちょいのロボにゃんの
+サポートをしたりします。</div>
+      <button id="start-button" type="button">クリックしてスタート</button>
       <div id="game-func">
         <span>ローマ字表示(R)</span>
         <div class="switch-btn">
@@ -147,20 +180,20 @@
           <button class="on-btn btn show" type="button">ON</button>
           <button class="off-btn btn" type="button">OFF</button>
         </div>
-        <span>スピードバー(S)</span>
+<!--         <span>スピードバー(S)</span>
         <div class="switch-btn">
           <button class="on-btn btn show" type="button">ON</button>
           <button class="off-btn btn" type="button">OFF</button>
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="game-view2">
       <div id="text-container">
         <div id="miss-type-screen"></div>
         <div id="start-msg">
-          <p>日本語入力モードをオフにしてください</p>
+          <p>左の人差し指を「F」に、右の人差し指を「J」におきましょう</p>
           <p><em>スペースキーで開始</em></p>
-          <p>（終了はEscキーです）</p>
+          <p>Escキーで終了できます</p>
         </div>
         <div id="example"></div>
         <div id="kana"></div>
@@ -254,14 +287,15 @@
     <div id="game-result">
       <div id="current-result">
         <div class="result-title">今回のタイピング結果</div>
-        <div id="example-list"></div>
+<!--         <div id="example-list"></div> -->
         <div class="result-data"></div>
       </div>
-      <div id="prev-result">
+<!--       <div id="prev-result">
         <div class="result-title">前回の結果</div>
         <div class="result-data"></div>
-      </div>
+      </div> -->
       <div id="result-comment">
+        <span class="box-title">コメント</span>
         <div class="container">---</div>
       </div>
       <div id="btn-area">
@@ -271,9 +305,8 @@
     </div>
   </div>
 </div>
-    <script src="https://github.com/pentamania/ios-unlock-test/blob/b7732977c491872c775a169563b6f9165eddf301/shared/wa.js">
-    </script>
-    <script src="https://robodone-dev.github.io/typing2/min.js"></script>
+    <script src="https://github.com/pentamania/ios-unlock-test/blob/b7732977c491872c775a169563b6f9165eddf301/shared/wa.js"></script>
+    <script src="https://robodone-dev.github.io/typing2/min.j"></script>
     <audio id="btn_wrong">
       <source src="https://robodone-dev.github.io/typing/js_typing_game-master//audio/Quiz-Wrong_Buzzer02-1.mp3" type="audio/mp3">
     </audio>
