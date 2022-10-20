@@ -220,7 +220,7 @@ html, body {
 }
 #animate{
   transform:translate(0px,20px);
-  width:110px;
+  width:90px;
 }
 
 .measure{
