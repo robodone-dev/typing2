@@ -367,7 +367,7 @@ html, body {
 #close-button1:hover {
   background: linear-gradient(180deg, #eee, #fff);
 }
-#game-header .description {
+#game-header {
   height: 40px;
   font-size: 18px;
   color: #fff;
@@ -413,7 +413,7 @@ html, body {
   color:#fff;
 }
 #start-button {
-  width: 160px;
+  width: 200px;
   height: 45px;
   line-height: 45px;
   text-align: center;
