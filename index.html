@@ -27,7 +27,7 @@
     <div class="mode-select">
       <!-- Typing game -->
       <div id="typing-start" class="typing-start menu-lv1">
-        <img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/Lv1_150x150.jpg">
+        <img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/Lv1_150x150.png">
 <!--         <p><span class="star5_rating" data-rate="1"></span></p> -->
         <button id="open-button" class="open-button" value=1 type="button">チャレンジする</button>
         <noscript>
@@ -36,7 +36,7 @@
       </div>
 
       <div id="typing-start" class="typing-start menu-lv2">
-        <img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/Lv2_150x150.jpg">
+        <img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/Lv2_150x150.png">
 <!--         <p><span class="star5_rating" data-rate="3"></span></p> -->
         <button id="open-button2" class="open-button" value=2 type="button">チャレンジする</button>
         <noscript>
@@ -45,7 +45,7 @@
       </div>
 
       <div id="typing-start" class="typing-start menu-lv3">
-        <img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/Lv3_150x150.jpg">
+        <img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/Lv3_150x150.png">
 <!--         <p><span class="star5_rating" data-rate="5"></span></p> -->
         <button id="open-button3" class="open-button" value=3 type="button">チャレンジする</button>
         <noscript>
@@ -55,33 +55,33 @@
     </div>
     <div class="score-section">
       <table class="score-table">
-  <tr>
-  <th style="width:90px;">レベル</th>
-  <th>どれくらいのレベル？</th>
-  </tr>
-  <tr>
-    <td>S（±）</td>
-    <td rowspan="2" style="background-color:#3AB0FF;color:#fff;" align="left">一般的なオフィスワークでは困ることのないレベルです。<br>プロレベルにはまだ届きません。<br>より高いレベルを目指すには、正確さを高めましょう</td>
-  </tr>
-  <tr>
-    <td>A（±）</td>
-  </tr>
-   <tr>
-    <td >B（±）</td>
-    <td rowspan="2" style="background-color:#FFB562;color:#fff;" align="left">個人的な用途でのパソコン利用には問題のないレベルです。
-<br>正確さを意識して更にスコアアップを目指しましょう。</td>
-  </tr>
-  <tr>
-    <td>C（±）</td>
-  </tr>
-  <tr>
-    <td>D（±）</td>
-    <td rowspan="2" style="background-color:#F87474;color:#fff;" align="left">キーの配置とタイピングの基本操作が理解できてきました。<br>できるだけ毎日練習を続けましょう。</td>
-  </tr>
-  <tr>
-    <td>E（±）</td>
-  </tr>
-</table>
+        <tr>
+        <th style="width:90px; border-radius:10px 0 0 0;">レベル</th>
+        <th style="border-radius:0 10px 0 0;">どれくらいのレベル？</th>
+        </tr>
+        <tr>
+          <td>S（±）</td>
+          <td rowspan="2" align="left">一般的なオフィスワークでは困ることのないレベルです。<br>プロレベルにはまだ届きません。<br>より高いレベルを目指すには、正確さを高めましょう</td>
+        </tr>
+        <tr>
+          <td>A（±）</td>
+        </tr>
+         <tr>
+          <td >B（±）</td>
+          <td rowspan="2" align="left">個人的な用途でのパソコン利用には問題のないレベルです。
+      <br>正確さを意識して更にスコアアップを目指しましょう。</td>
+        </tr>
+        <tr>
+          <td>C（±）</td>
+        </tr>
+        <tr>
+          <td>D（±）</td>
+          <td rowspan="2" align="left" style="border-radius:0 0 10px 0;">キーの配置とタイピングの基本操作が理解できてきました。<br>できるだけ毎日練習を続けましょう。</td>
+        </tr>
+        <tr>
+          <td style="border-radius:0 0 0 10px;">E（±）</td>
+        </tr>
+      </table>
     </div>
     <div id="game-screen">
     <div class="clouds">
@@ -310,11 +310,14 @@
 </div>
     <script src="https://github.com/pentamania/ios-unlock-test/blob/b7732977c491872c775a169563b6f9165eddf301/shared/wa.js"></script>
     <script src="https://robodone-dev.github.io/typing2/min.js"></script>
+    <audio id="btn_push_normal">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master/audio/push_norm.mp3" type="audio/mp3">
+    </audio>
     <audio id="btn_wrong">
-      <source src="https://robodone-dev.github.io/typing/js_typing_game-master//audio/Quiz-Wrong_Buzzer02-1.mp3" type="audio/mp3">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master/audio/Quiz-Wrong_Buzzer02-1.mp3" type="audio/mp3">
     </audio>
     <audio id="btn_push">
-      <source src="https://robodone-dev.github.io/typing/js_typing_game-master//audio/btn_push.mp3" type="audio/mp3">
+      <source src="https://robodone-dev.github.io/typing/js_typing_game-master/audio/btn_push.mp3" type="audio/mp3">
     </audio>    
     <audio id="countdown03">
       <source src="https://robodone-dev.github.io/typing/js_typing_game-master/audio/Countdown06-2.mp3" type="audio/mp3">

@@ -1,18 +1,43 @@
+
 html, body { 
   margin: 0;
   padding: 0;
   height:100%;
   font-family: 'Noto Sans JP', sans-serif;
-/*   background-color:#deabf5; */
+/*   background-color:#00B7CE; */
 }
 
+.sizuku {
+    animation: sizuku 1s linear 0s; /*1s はアニメーションにかかる時間*/
+    background-color: #fff; /*背景色*/
+    border-radius: 10px;
+    border: 4px solid #fff; /*ボーダーの幅と色*/
+    position: absolute;
+    z-index: 999999;
+}
+
+@keyframes sizuku {
+    0% {
+        height: 0; 
+        opacity: 1;
+        transform: translate(0, 0);
+        width: 0;
+    }
+    100% {
+        height: 75px; /*円の高さ幅の最大値*/
+        opacity: 0;
+        transform: translate(-37.5px, -37.5px); /*高さの半分の値にする*/
+        width: 75px; /*基本高さと合わせる*/
+    }
+}
 
 /* バナー本体 */
 .news-banner {
   display: block;
   height: 50px;
   width: 100%;
-  background: linear-gradient(0deg, #ffb500, #ffcf00);;
+/*   background: linear-gradient(0deg, #ffb500, #ffcf00); */
+  background-color: rgba(255, 255, 255, .1);
   overflow: hidden;
 }
 
@@ -215,7 +240,7 @@ html, body {
 
 .title-img{
   text-align: center;
-  padding:40px 0 0 0;
+  padding:30px 0 0 0;
 }
 .title-img img{
   width:500px;
@@ -265,12 +290,11 @@ html, body {
 
 .typing-start {
   text-align: center;
-  padding: 20px 20px 0px 20px;
+  padding: 20px 23px 0px 23px;
   background-color: #fff;
   border-radius: 10px;
-  margin:17px 17px 0px 17px;
+  margin:15px 15px 0px 15px;
   width:auto;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .typing-start img{
@@ -287,13 +311,16 @@ html, body {
 }
 
 .menu-lv1{
-  background:linear-gradient(25deg, #a7e7ff, #20c2ff);
+/*   background:linear-gradient(25deg, #a7e7ff, #20c2ff); */
+  background-color: rgba(255, 255, 255, .3);
 }
 .menu-lv2{
-  background:linear-gradient(24deg, #a7b1ff, #2056ff);
+/*   background:linear-gradient(24deg, #a7b1ff, #2056ff); */
+   background-color: rgba(255, 255, 255, .3);
 }
 .menu-lv3{
-  background:linear-gradient(24deg, #d0a7ff, #8720ff);
+/*   background:linear-gradient(24deg, #d0a7ff, #8720ff); */
+   background-color: rgba(255, 255, 255, .3);
 }
 .note {
   font-size: 18px;
@@ -312,14 +339,19 @@ html, body {
   font-size: 17px;
   font-weight: bold;
   color: #fff;
-  background: linear-gradient(0deg, #ffb500, #ffcf00);
+/*   background: linear-gradient(0deg, #ffb500, #ffcf00); */
   border: 0;
   border-radius: 10px;
   margin: 20px auto 30px;
-  box-shadow: 0 1px 1px rgba(0,0,0,.2);
-  overflow: hidden;
+  background-color: #ffb500;
+  border-bottom: 5px solid #cc9200;
   cursor: pointer;
-  appearance: none;
+}
+
+.open-button:hover {
+  margin-top: 23px auto 30px;
+  background: # fff20a;
+  border-bottom: 3px solid #cc9200;
 }
 #game-overlay {
   position: absolute;
@@ -1471,10 +1503,6 @@ svg {
   padding: 0 18px;
 }
 
-.score-section{
-  
-}
-
 .score-table{
   border-spacing: 3px;
   border-radius:0px;
@@ -1486,13 +1514,17 @@ svg {
 .score-table th{
   padding: 10px 0;
   border-radius:0px;
+  background-color: rgba(255, 255, 255, .3);
 }
 
 .score-table td{
 /*   border-bottom: solid 2px #ddd; */
-  padding: 15px 15px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 8.5px 10px;
   border-radius:0px;
   border:0;
+  font-size:12px;
+  color:#fff;
 }
 .table_rank{
   text-aligin:center;
