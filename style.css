@@ -1,11 +1,47 @@
 
 html, body { 
+  user-select: none;
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10かららしい */
   margin: 0;
   padding: 0;
   height:100%;
   font-family: 'Noto Sans JP', sans-serif;
 /*   background-color:#00B7CE; */
 }
+
+
+
+ .menu-animation{
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 2.3s;
+}
+
+.keyframe6 {
+  animation-name: poyopoyo;
+}
+
+@keyframes poyopoyo {
+  0%, 40%, 60%{
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+}
+
+.delay-time02{
+animation-delay: 0.5s;
+}
+
+.delay-time03{
+animation-delay: 1s;
+}
+
+
 
 .sizuku {
     animation: sizuku 1s linear 0s; /*1s はアニメーションにかかる時間*/
@@ -243,7 +279,7 @@ html, body {
   padding:30px 0 0 0;
 }
 .title-img img{
-  width:500px;
+  width:480px;
   
 }
 

@@ -245,7 +245,7 @@ Have fun :)
     startMsg.after(count);
     let readyTime = 3;
     count.innerHTML = readyTime;
-    countdownAudio();
+    playSound(3);
     const readyTimer = setInterval(() => {
       readyTime--;
       if (readyTime == 0) {
@@ -329,12 +329,12 @@ Have fun :)
     if (flagW) {
       const cWPM = document.getElementById('current-wpm');
       cWPM.style.display = 'block';
-      cWPM.innerHTML = 'WPM: 0.00';
+      cWPM.innerHTML = 'タイプスピード: 0.00';
       const id = setInterval(() => {
         let time = new Date() - begin;
         let speed = correct / time * 60 * 1000;
         if (playing) {
-          cWPM.innerHTML = 'WPM: ' + speed.toFixed(2);
+          cWPM.innerHTML = 'タイプスピード: ' + speed.toFixed(2);
         } else {
           clearInterval(id);
           cWPM.innerHTML = '';
@@ -388,7 +388,7 @@ Have fun :)
       selActive();
       
       if(count > 1){
-        nextwordAudio();
+        playSound(4);
         loop_star();
         shuffleNumberCounter(targetWRM);
       }
@@ -412,7 +412,7 @@ Have fun :)
     if (active) active.classList.remove('active');
     
     keyPositionRemove();
-    endAudio();
+    playSound(5);
 
     view2.style.display = 'none';
     result.style.display = 'block';
@@ -533,7 +533,7 @@ Have fun :)
     html ='<div class="result-summary-container"><div class="result-box"><h3>ほしのかず</h3><div class="inner"><div class="inner-content"><div class="header-menu"><img src="https://robodone-dev.github.io/typing/js_typing_game-master/img/star-yellow.svg"><span>×</span><div class="number">' + targetNum +'</div></div></div></div></div><div class="result-box"><h3>レベル</h3><div class="inner"><div class="inner-content"><span>'+ getLevel(score) + '</span></div></div></div></div>'
     
     
-    html += '<table><tr><th>スコア</th><th>入力時間</th><th>入力文字数</th><th>ミス入力数</th><th>WPM</th><th>正確率</th><th>苦手キー</th></tr><tr>';
+    html += '<table><tr><th>スコア</th><th>入力時間</th><th>入力文字数</th><th>ミス入力数</th><th>タイプスピード</th><th>正確率</th><th>苦手キー</th></tr><tr>';
     html += '<td><d class="data">' + score + '</td>';
     // html += '<td><div class="data">' + getLevel(score) +'</td>';
     html += '<td><div class="data">' + convTime(time) + '</td>';
@@ -756,7 +756,7 @@ Have fun :)
   // ミス入力処理
   function missed() {
     miss++;
-    wrongAudio();
+    playSound(1);
     if (recordM.indexOf(ridx[count - 1]) == -1) {
       recordM.push(ridx[count - 1]);
     }
@@ -1117,7 +1117,7 @@ Have fun :)
               missFlag = false;
             } else {
               recordHTML += key;
-              pushAudio();
+              playSound(2);;
             }
             textMove();
             correct++;
@@ -1210,37 +1210,56 @@ Have fun :)
   });
 })(window, document);
 
-function pushAudio() {
-    document.getElementById('btn_push').currentTime = 0; //連続クリックに対応
-    document.getElementById('btn_push').play(); //クリックしたら音を再生
-}
+    var request;
+    var status = 0;
+    var stopflag = 0;
+    var context;
 
-function wrongAudio() {
-    document.getElementById('btn_wrong').currentTime = 0; //連続クリックに対応
-    document.getElementById('btn_wrong').play(); //クリックしたら音を再生
-}
+    const audioTag = document.querySelectorAll('audio');
+    const audioSorce = document.querySelectorAll('audio *');
+    function playSound(audioNum) {
+      request = new XMLHttpRequest();
+      // request.open("GET", "https://robodone-dev.github.io/typing/js_typing_game-master/audio/push_norm.mp3", true);
+      request.open("GET", audioSorce[audioNum].src, true);
+      request.responseType = "arraybuffer";
+      request.onload = completeOnLoad;
+      request.send();
+    }
 
-function countdownAudio() {
-    document.getElementById('countdown03').currentTime = 0; //連続クリックに対応
-    document.getElementById('countdown03').play(); //クリックしたら音を再生
-}
+    function completeOnLoad() {
+      // var elem = document.getElementById("btn_push_normal");
+      // elem.innerText = "再生中";
 
-function nextwordAudio() {
-    document.getElementById('next_word').currentTime = 0; //連続クリックに対応
-    document.getElementById('next_word').play(); //クリックしたら音を再生
-}
+      window.AudioContext = window.AudioContext || window.webkitAudioContext;
+      context = new AudioContext();
+      source = context.createBufferSource();
 
-function endAudio() {
-    document.getElementById('end').currentTime = 0; //連続クリックに対応
-    document.getElementById('end').play(); //クリックしたら音を再生
-}
+      // オーディオをデコード
+      context.decodeAudioData(request.response, function (buf) {
+        source.buffer = buf;
+        source.loop = false;
+        source.connect(context.destination);
+        source.start(0);
+      });
+    }
+
+    function playPause() {
+      if (stopflag == 0) {
+        context.suspend();
+        stopflag = 1;
+      } else {
+        context.resume();
+        stopflag = 0;
+      }
+    }
 
 document.body.addEventListener("click", drop, false);
 
   function drop(e) {
 
-    document.getElementById('btn_push_normal').currentTime = 0; //連続クリックに対応
-    document.getElementById('btn_push_normal').play(); //クリックしたら音を再生
+    playSound(0);
+    // document.getElementById('btn_push_normal').currentTime = 0; //連続クリックに対応
+    // document.getElementById('btn_push_normal').play(); //クリックしたら音を再生
     
     //座標の取得
     var x = e.pageX;
@@ -1298,7 +1317,7 @@ function createStar() {
 const target = document.querySelector('.number');
 const targetWRM = document.getElementById('current-wpm');
 const shuffleNumberCounter = (targetWRM) => {
-  targetNum = Number(targetWRM.textContent.replace("WPM: ", "")) /10;
+  targetNum = Number(targetWRM.textContent.replace("タイプスピード: ", "")) /10;
   var initNum = Number(target.innerHTML);
   // console.log('target_pre:'+targetNum);
   targetNum = Math.round(targetNum + Number(target.innerHTML));
@@ -1331,3 +1350,5 @@ const shuffleNumberCounter = (targetWRM) => {
   
   counterData = setInterval(countUp, speed)
 }
+
+
