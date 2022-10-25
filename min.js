@@ -1210,48 +1210,47 @@ Have fun :)
   });
 })(window, document);
 
-    var request;
-    var status = 0;
-    var stopflag = 0;
-    var context;
+var request;
+var status = 0;
+var stopflag = 0;
+var context;
 
-    const audioTag = document.querySelectorAll('audio');
-    const audioSorce = document.querySelectorAll('audio *');
-    function playSound(audioNum) {
-      request = new XMLHttpRequest();
-      // request.open("GET", "https://robodone-dev.github.io/typing/js_typing_game-master/audio/push_norm.mp3", true);
-      request.open("GET", audioSorce[audioNum].src, true);
-      request.responseType = "arraybuffer";
-      request.onload = completeOnLoad;
-      request.send();
-    }
+function playSound(audioNum) {
+  const audioTag = document.querySelectorAll('audio');
+  const audioSorce = document.querySelectorAll('audio *');
+  request = new XMLHttpRequest();
+  request.open("GET", audioSorce[audioNum].src, true);
+  request.responseType = "arraybuffer";
+  request.onload = completeOnLoad;
+  request.send();
+}
 
-    function completeOnLoad() {
-      // var elem = document.getElementById("btn_push_normal");
-      // elem.innerText = "再生中";
+function completeOnLoad() {
+  // var elem = document.getElementById("btn_push_normal");
+  // elem.innerText = "再生中";
 
-      window.AudioContext = window.AudioContext || window.webkitAudioContext;
-      context = new AudioContext();
-      source = context.createBufferSource();
+  window.AudioContext = window.AudioContext || window.webkitAudioContext;
+  context = new AudioContext();
+  source = context.createBufferSource();
 
-      // オーディオをデコード
-      context.decodeAudioData(request.response, function (buf) {
-        source.buffer = buf;
-        source.loop = false;
-        source.connect(context.destination);
-        source.start(0);
-      });
-    }
+  // オーディオをデコード
+  context.decodeAudioData(request.response, function (buf) {
+    source.buffer = buf;
+    source.loop = false;
+    source.connect(context.destination);
+    source.start(0);
+  });
+}
 
-    function playPause() {
-      if (stopflag == 0) {
-        context.suspend();
-        stopflag = 1;
-      } else {
-        context.resume();
-        stopflag = 0;
-      }
-    }
+function playPause() {
+  if (stopflag == 0) {
+    context.suspend();
+    stopflag = 1;
+  } else {
+    context.resume();
+    stopflag = 0;
+  }
+}
 
 document.body.addEventListener("click", drop, false);
 
