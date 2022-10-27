@@ -41,6 +41,60 @@ animation-delay: 0.5s;
 animation-delay: 1s;
 }
 
+.overlay-ranking {
+  display:none;
+  position: fixed;
+  inset: 0;
+/*   display: flex; */
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-ranking {
+  width: 700px;
+  height: 600px;
+  padding: 16px;
+  background-color: white;
+  overflow: scroll; /* スクロール設定 */
+}
+.modal-header h1 {
+  margin: 1rem 0;
+}
+
+.modal-ranking-header {
+  padding: 3px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-ranking-close {
+  font-size: 2rem;
+}
+
+.modal-ranking-close:hover {
+  cursor: pointer;
+}
+
+.modal-ranking-content {
+  min-height: auto;
+}
+
+#rankingBoard{
+  border-spacing: 0;
+}
+
+#memberList td {
+  background: #eee;
+  border-radius:0px;
+}
+#rankingBoard th {
+  border-radius:0px;
+}
+#memberList tr:nth-child(odd) td {
+  background: #fff;
+}
 
 
 .sizuku {
@@ -378,7 +432,7 @@ animation-delay: 1s;
 /*   background: linear-gradient(0deg, #ffb500, #ffcf00); */
   border: 0;
   border-radius: 10px;
-  margin: 20px auto 30px;
+  margin: 20px auto 10px;
   background-color: #ffb500;
   border-bottom: 5px solid #cc9200;
   cursor: pointer;
@@ -389,6 +443,28 @@ animation-delay: 1s;
   background: # fff20a;
   border-bottom: 3px solid #cc9200;
 }
+
+.ranking-button {
+  display: block;
+  width: 180px;
+  height: 48px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  margin: 0px auto 30px;
+  background-color: #ff6347;
+  border-bottom: 5px solid #b34532;
+  cursor: pointer;
+}
+
+.ranking-button:hover {
+  margin-top: 23px auto 30px;
+  background: # b34532;
+  border-bottom: 3px solid #b34532;
+}
+
 #game-overlay {
   position: absolute;
   top: 0;
@@ -1147,6 +1223,54 @@ td {
 #prev-result .result-data ul li .data {
   width: 115px;
 }*/
+#reg-area{
+  position: relative;
+}
+.reg-form{
+  display:flex;
+  justify-content: center;
+}
+.reg-form__item label{
+  color:#fff;
+}
+
+.reg-form__item{
+  margin-right:10px;
+}
+
+.reg-form__item input{
+  height:40px;
+  font-size:20px;
+  border:none;
+}
+
+.reg-form__item_score{
+  pointer-events: none;
+}
+.reg-form__item_score input{
+  border:none;
+  background-color:transparent;
+}
+#reg-score{
+  width:5px;
+  font-size:2px;
+  color: transparent;
+}
+
+.reg-form__submit button{
+  display: block;
+  width: 120px;
+  height: 38px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  margin: 0px auto 30px;
+  background-color: #ff6347;
+  border-bottom: 5px solid #b34532;
+  cursor: pointer;
+}
 
 #btn-area {
   position: relative;
@@ -1171,6 +1295,9 @@ td {
   top: 0;
   right: 289px;
   background-color: #027fff;
+}
+#rank-reg-button {
+  background-color: #ff6347;
 }
 #close-button2 {
   top: 0;

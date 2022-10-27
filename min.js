@@ -6,12 +6,17 @@ Have fun :)
 (function(window, document) {
   const overlay = document.createElement('div');
   overlay.id = 'game-overlay';
+  const overlayRanking = document.getElementById('overlayRanking');
   const game = document.getElementById('game-screen');
   const gameTitle = document.getElementById('game-subtitle');
   const button1 = document.getElementById('close-button1');
   const button2 = document.getElementById('open-button');
   const button22 = document.getElementById('open-button2');
   const button23 = document.getElementById('open-button3');
+  const rankingbutton = document.getElementById('ranking-button');
+  const rankingbutton2 = document.getElementById('ranking-button2');
+  const rankingbutton3 = document.getElementById('ranking-button3');
+  const rankingbuttonclose = document.getElementsByClassName('modal-ranking-close')[0];
   const button3 = document.getElementById('start-button');
   const button4 = document.getElementById('replay-button');
   const button5 = document.getElementById('close-button2');
@@ -41,6 +46,7 @@ Have fun :)
   const littleRight = document.getElementById('little-right');
   const position = document.getElementById('animate');
   const animatePanel = document.getElementById('animate-panel');
+  const regScore = document.getElementById('reg-score');
   var position_x = 0;
   var position_x_origin = 0; 
   
@@ -213,6 +219,37 @@ Have fun :)
     }
 
     isFirst = false;
+  }
+  
+  // ランキングオープン
+
+  function　openRanking(){
+    overlayRanking.style.display = 'flex';
+    
+    url = 'https://api.sssapi.app/PFdbQQlH4zfYFRSABb4lH?order_by=-score';
+    fetch(url)
+    .then( response => response.json() )
+    .then( data  => rankingpush(data) );
+    
+    const memberList = document.getElementById("memberList");
+    memberList.innerHTML ="";
+    
+    function rankingpush(data){
+      for(var i = 0; i < 30; i++){
+        console.log(data[[i]]);
+        const tr = document.createElement("tr");
+        memberList.appendChild(tr);
+        
+        colname_array = ['rank','school','user','score'];
+        for(var z = 0; z < 4; z++){          
+          const td = document.createElement("td");
+          var td_col = colname_array[z];
+          td.textContent = data[i][td_col];
+          tr.appendChild(td);
+        }
+        
+      }
+    }   
   }
   
   // スタート処理
@@ -429,6 +466,7 @@ Have fun :)
     speed = correct / time * 60 * 1000;
     accuracy = correct / (correct + miss);
     score = isStopped ? '-' : Math.floor(speed * accuracy ** 3);
+    regScore.value = score;
    
 
     // let html;
@@ -1067,6 +1105,10 @@ Have fun :)
   button3.addEventListener('click', start);
   button4.addEventListener('click', replay);
   button5.addEventListener('click', close);
+  rankingbutton.addEventListener('click', openRanking);
+  rankingbutton2.addEventListener('click', openRanking);
+  rankingbutton3.addEventListener('click', openRanking);
+  rankingbuttonclose.addEventListener('click', function(){overlayRanking.style.display = 'none';});
   
   for (let i = 0; i < onBtns.length; i++) {
     onBtns[i].addEventListener('click', () => {
