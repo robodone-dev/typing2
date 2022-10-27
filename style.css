@@ -1271,6 +1271,11 @@ td {
   border-bottom: 5px solid #b34532;
   cursor: pointer;
 }
+.reg-form__submit button:hover {
+  margin-top: 23px auto 30px;
+  background: # b34532;
+  border-bottom: 3px solid #b34532;
+}
 
 #btn-area {
   position: relative;
