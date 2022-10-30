@@ -1242,6 +1242,7 @@ td {
   height:40px;
   font-size:16px;
   border:none;
+  border-radius:8px;
 }
 
 .reg-form__item_score{
@@ -1696,4 +1697,22 @@ svg {
 }
 .table_rank{
   text-aligin:center;
+}
+
+.inner-content{
+  font-size:45px;
+}
+
+#rankScore {
+  animation: flash 2s linear infinite;
+}
+
+@keyframes flash {
+  0%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
